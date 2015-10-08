@@ -11,7 +11,11 @@
 5. bx.python(>=0.7)
 6. Pandas
 
+Istalling from PyPI:
 
+```
+pip install -U numpy scipy scikit-learn bx-python pandas
+```
 
 ## Description of the folders:
 
