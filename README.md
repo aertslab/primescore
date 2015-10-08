@@ -131,7 +131,7 @@ python ${PATH_TO_SCRIPT} -d ${PATH_TO_DATA} -m ${PATH_TO_TRAINED_CLASSIFIER} -s 
 ## Step 4: Calculate PRIME score
 To claculate PRIME scores the following data should be provided
 
-1. **.2bit** file ( here we Yassume it is in the folder **./example/**
+1. **.2bit** file ( here we assume it is in the folder **./example/**
 2. File with SNVs
 
 For each mutation (SNV, insertion or deletion) script checks 10 regions (windows) around mutations. 
