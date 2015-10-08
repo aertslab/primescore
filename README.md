@@ -21,7 +21,7 @@ pip install -U numpy scipy scikit-learn bx-python pandas
 Then you can clone the code:
 
 ```
-https://github.com/aertslab/primescore.git
+git clone https://github.com/aertslab/primescore.git
 ```
 
 ## Description of the folders:
