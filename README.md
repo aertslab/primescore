@@ -10,12 +10,13 @@
 4. scikit-learn (>=14.0)
 5. bx.python(>=0.7)
 6. Pandas
+7. Matplotlib
 
 Istalling from PyPI:
 
 
 ```
-pip install -U numpy scipy scikit-learn bx-python pandas
+pip install -U numpy scipy scikit-learn bx-python pandas matplotlib
 ```
 
 Then you can clone the code:
