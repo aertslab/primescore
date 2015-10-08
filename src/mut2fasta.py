@@ -5,12 +5,6 @@ import sys
 
 
 
-
-
-
-
-
-
 LEFT=400
 RIGHT=400
 
