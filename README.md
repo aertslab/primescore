@@ -3,21 +3,21 @@
 
 
 ## Requirements:
-1) Python 2.7
-2) NumPy (>= 1.6.1)
-3) SciPy (>= 0.9)
-4) scikit-learn (>=14.0)
-5) bx.python(>=0.7)
-6) Pandas
+1. Python 2.7
+2. NumPy (>= 1.6.1)
+3. SciPy (>= 0.9)
+4. scikit-learn (>=14.0)
+5. bx.python(>=0.7)
+6. Pandas
 
 
 
 Description of the folders:
-1) ./scr: folder with scripts
-2) ./cbust_folder: folder with Cluster-buster tool
-3) ./pwms_folder: folder with PWMs (Position Weight Matrix)
-4) ./example: folder with example data
-5) ./results: folder with results
+1. ./scr: folder with scripts
+2. ./cbust_folder: folder with Cluster-buster tool
+3. ./pwms_folder: folder with PWMs (Position Weight Matrix)
+4. ./example: folder with example data
+5. ./results: folder with results
 
 
 ## Step 1. Feature-vector representation of the positives and negatives
@@ -116,8 +116,8 @@ python ${PATH_TO_SCRIPT} -d ${PATH_TO_DATA} -m ${PATH_TO_TRAINED_CLASSIFIER} -s 
 
 ## Step 4: Calculate PRIME score
 To claculate PRIME scores the following data should be provided
-1) **.2bit** file ( here we Yassume it is in the folder **./example/**
-2) File with SNVs
+1. **.2bit** file ( here we Yassume it is in the folder **./example/**
+2. File with SNVs
 
 For each mutation (SNV, insertion or deletion) script checks 10 regions (windows) around mutations. 
 
@@ -230,8 +230,8 @@ python ${PATH_TO_SCRIPT} -f ${PATH_TO_2BIT_FILE} -o ${PATH_TO_FEATURE_ORDER} -b 
 
 If you are using i-cis-Target tool for motif enrichment anaysis we provide additional script to select PWMs (features) for your RF model.
 To select motifs the following data are necessery:
-1) File with motif enrichment results (from i-cis-Target tool): **statistics.tbl**
-2) File with list of all singletones (PWMs) you have (all **.cb** files in the **./pwms_folder**). This files cane be found in the folder with examples.
+1. File with motif enrichment results (from i-cis-Target tool): **statistics.tbl**
+2. File with list of all singletones (PWMs) you have (all **.cb** files in the **./pwms_folder**). This files cane be found in the folder with examples.
 
 
 
@@ -267,8 +267,8 @@ PATH_TO_MUTATIONS=./example/mutations.txt
 python ${PATH_TO_SCRIPT} -r ${PATH_TO_SAVE_REF_FASTA} -m ${PATH_TO_SAVE_MUT_FASTA} -f ${PATH_TO_2BIT_FILE} -v ${PATH_TO_MUTATIONS}
 ```
 
-This **fasta** files coulde be used to make feature-tables (apply **make_feature_table.py** ) and then scored with **classify_sequences.py**. To calculate **PRIME** score you can substract mutant and reference classifier scores. 
-This approach is faster comparing to usage of **calculate_PRIME<>.py** scripts because only one region is scored (mutation will be in the center of the window). But with **calculate_PRIME<>.py** for each muttion is cheked **10** windows around.
+This **fasta** files coulde be used to make feature-tables (apply **make_feature_table.py** ) and then be scored with **classify_sequences.py**. To calculate **PRIME** score you can substract mutant and reference classifier scores. 
+This approach is faster comparing to usage of **calculate_PRIME<>.py** scripts because only one region is scored (mutation will be in the center of the window). But when using **calculate_PRIME<>.py**  **10** windows around each mutation are checked. 
 
 
 ## References
@@ -277,7 +277,7 @@ This approach is faster comparing to usage of **calculate_PRIME<>.py** scripts b
 
  * [i-cis-Target tool](https://gbiomed.kuleuven.be/apps/lcb/i-cisTarget/)
  
-1) Imrichová,H., Hulselmans,G., Kalender Atak,Z., Potier,D. and Aerts,S. (2015) i-cisTarget 2015 update: generalized cis-regulatory enrichment analysis in human, mouse and fly. Nucleic Acids Res. doi: 10.1093/nar/gkv395
+1. Imrichová,H., Hulselmans,G., Kalender Atak,Z., Potier,D. and Aerts,S. (2015) i-cisTarget 2015 update: generalized cis-regulatory enrichment analysis in human, mouse and fly. Nucleic Acids Res. doi: 10.1093/nar/gkv395
 
-2) Herrmann,C., Van de Sande,B., Potier,D. and Aerts,S. (2012) i-cisTarget: an integrative genomics method for the prediction of regulatory features and cis-regulatory modules. Nucleic Acids Res. doi: 10.1093/nar/gks543
+2. Herrmann,C., Van de Sande,B., Potier,D. and Aerts,S. (2012) i-cisTarget: an integrative genomics method for the prediction of regulatory features and cis-regulatory modules. Nucleic Acids Res. doi: 10.1093/nar/gks543
 
