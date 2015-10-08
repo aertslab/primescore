@@ -236,7 +236,7 @@ If you are using i-cis-Target tool for motif enrichment anaysis we provide addit
 To select motifs the following data are necessery:
 
 1. File with motif enrichment results (from i-cis-Target tool): **statistics.tbl**
-2. File with list of all singletones (PWMs) you have (all **.cb** files in the **./pwms_folder**). This files cane be found in the folder with examples.
+2. File with list of all singletones (PWMs) you have (all **.cb** files in the **./pwms_folder**). This files can be found in the folder with examples.
 
 
 
