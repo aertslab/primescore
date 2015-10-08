@@ -5,7 +5,6 @@ This script makes cross validation procedure
 
 import optparse
 from sklearn.ensemble import RandomForestClassifier
-from pylab import *
 from sklearn.metrics import roc_curve, auc
 from sklearn.cross_validation import StratifiedKFold
 from sklearn.metrics import precision_recall_curve
