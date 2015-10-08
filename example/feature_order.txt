@@ -1,0 +1,12 @@
+taipale-GATGACGTCATC-XBP1-DBD.cb
+homer-M00097.cb
+transfac_public-M00177.cb
+homer-M00098.cb
+transfac_public-M00114.cb
+transfac_public-M00051.cb
+flyfactorsurvey-Crc_CG6272_SANGER_5_FBgn0036126.cb
+swissregulon-NFKB1_REL_RELA.p2.cb
+taipale-NATGACGTCAYN-JDP2-DBD.cb
+factorbook-CREB.cb
+hdpi-HCFC2.cb
+taipale-NNATGAYGCAATN-ATF4-DBD.cb
