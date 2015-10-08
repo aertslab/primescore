@@ -1,14 +1,8 @@
-__author__ = 'dsvet'
-
 import bx.seq.twobit
 from collections import OrderedDict
 import optparse
 import sys
-#
-# PATH_TO_FASTA_FILE="/home/dsvet/data/genomes/hg19.2bit"
-# PATH_TO_MUTS="/home/dsvet/data/test.mut.bed"
-# PAHT_TO_SAVE_REF="/home/dsvet/data/test.mut.fasta"
-# PAHT_TO_SAVE_MUT="/home/dsvet/data/test.mut.fasta"
+
 
 
 
