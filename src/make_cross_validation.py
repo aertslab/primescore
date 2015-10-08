@@ -9,6 +9,7 @@ from sklearn.metrics import roc_curve, auc
 from sklearn.cross_validation import StratifiedKFold
 from sklearn.metrics import precision_recall_curve
 import pandas as pd
+import numpy as np
 
 
 
