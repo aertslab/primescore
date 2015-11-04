@@ -44,7 +44,7 @@ def create_sequence_for_region(twobit_file_object,mutations_dict):
             left_seq_to_take = select_fasta_for_region_SNV(chrID_fasta_dict, [chr, start_left, int(data[1]) ])
             right_seq_to_take =  select_fasta_for_region_SNV(chrID_fasta_dict, [chr, int(data[1])+1, end_right ])
 
-            ###--merge--
+            ###---merge---###
             mut_sequence = left_seq_to_take + mut_nuc + right_seq_to_take
             ref_sequence = left_seq_to_take + ref_nuc + right_seq_to_take
 

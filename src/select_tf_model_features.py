@@ -26,7 +26,7 @@ PATH_TO_STAT_TBL_RESULTS = options.stat_tbl_path
 PATH_TO_SINGLETONS = options.motif_path
 TFNAME = options.tf_name
 
-db_name='hg19-regions-220330-9species.extracted'
+db_name='hg19-regions-1M-9species'
 NES_thershold = 2.5
 num_motifs_per_tf = 10
 num_motifs_for_cofactors = 10
