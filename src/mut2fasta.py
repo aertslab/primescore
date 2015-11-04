@@ -66,6 +66,7 @@ def create_sequence_for_region(twobit_file_object,mutations_dict):
             chr = data[0]
             ref_nuc = data[3]
             mut_nuc = data[4]
+            mut_nuc = mut_nuc.split(",")[0]
             start_left = int(data[1])- LEFT
             end_right = int(data[1]) + 1 + RIGHT
             left_seq_to_take = select_fasta_for_region_SNV(chrID_fasta_dict, [chr, start_left, int(data[1]) ])
