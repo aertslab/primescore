@@ -23,7 +23,6 @@ def read_file_with_mutations(path_to_file):
             line = line.split()
             region_ID="_".join([line[0],line[1],line[2],line[3],line[4]])
             chr_start_end_ref_mut_dict[region_ID]  = region_ID
-
     return chr_start_end_ref_mut_dict
 
 
