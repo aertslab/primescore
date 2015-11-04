@@ -12,12 +12,6 @@ from os.path import isfile, join
 import optparse
 import sys
 
-PATH_TO_ANNOTATION_TABLE = '/home/dsvet/annotationtracks/hgnc-m0.001-o0.0.tbl'
-PATH_TO_STAT_TBL_RESULTS = '/home/dsvet/projects/10_cell_line_mutations/rf_models_per_cell_line/A549/statistics.tbl'
-# PATH_TO_CLUSTERS_TBL='/home/dsvet/projects/10_cell_line_mutations/rf_models_per_cell_line/A549/clusters.tbl'
-PATH_TO_SINGLETONS = '/home/dsvet/test/singletons_v6'
-TFNAME = 'FOSL1'
-
 parser = optparse.OptionParser()
 parser.add_option("-a", "--motif_annotation_path", action="store", type="string", dest="motif_annotation_path", help='Name of the TF to process')
 parser.add_option("-s", "--stat_tbl_path", action="store", type="string", dest="stat_tbl_path", help='Name of the TF to process')
