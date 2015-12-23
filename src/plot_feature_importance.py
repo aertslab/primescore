@@ -5,7 +5,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from pylab import *
 import optparse
-
+matplotlib.use('Agg') 
 
 PATH_TO_DATA_POS = '/home/dsvet/mydata/45TFs_new/TRAINING_SET/ft_pos_neg_1pertf_all45_tfs_with_fmf/STAT5A.pos.FT.ftf'
 PATH_TO_DATA_NEG = '/home/dsvet/mydata/45TFs_new/TRAINING_SET/ft_pos_neg_1pertf_all45_tfs_with_fmf/STAT5A.neg.FT.ftf'
