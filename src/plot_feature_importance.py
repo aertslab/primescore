@@ -42,6 +42,10 @@ def calculate_feature_importance(data_for_training_numpy, list_all_features, cla
     plt.xticks(np.arange(0, num_features), list_all_features, rotation='vertical',fontsize = 10)
     plt.tight_layout()
     plt.savefig(filename_to_save_fig, dpi=80)
+
+
+    ###---Print to stdout feature importance value---###
+
     # plt.show()
 
 
