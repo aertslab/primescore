@@ -35,14 +35,14 @@ def calculate_feature_importance(data_for_training_numpy, list_all_features, cla
     ###---Make cross validation and plot curve using all features---###
     color_PWM = '#80E800'
     num_features = len(list_all_features)
-    # plt.figure(figsize=(6, 8), dpi=300)
+    plt.figure(dpi=80)
     plt.plot(np.arange(0, num_features), importances, marker='o',linestyle='--',color='#8667D7')
     plt.fill_between(np.arange(0,num_features), importances[:num_features], importances[:num_features] + importance_std_mean[:num_features], color = color_PWM, alpha=0.5)
     plt.fill_between(np.arange(0,num_features), importances[:num_features], importances[:num_features] - importance_std_mean[:num_features], color = color_PWM, alpha=0.5)
     plt.xticks(np.arange(0, num_features), list_all_features, rotation='vertical',fontsize = 10)
     plt.tight_layout()
     plt.savefig(filename_to_save_fig, dpi=80)
-
+    plt.close()
 
     ###---Print to stdout feature importance value---###
 
@@ -57,6 +57,7 @@ if __name__ == '__main__':
     parser.add_option("-p", "--pos_data", action = "store", type = "string", dest = "pos_data_path", help = 'File with feature names')
     parser.add_option("-n", "--neg_data", action = "store", type = "string", dest = "neg_data_path", help = 'file with mutations (SNVs)')
     parser.add_option("-s", "--save_path"   , action = "store", type = "string", dest = "path_to_save_results", help = 'Path to save results')
+    parser.add_option("-o", "--imprtance_scores"   , action = "store", type = "string", dest = "path_to_save_imprtance_scores", help = 'Path to save results')
     (options, args) = parser.parse_args()
 
     # Check if we have an expression matrix filea FASTA or twobit file is given as input.
