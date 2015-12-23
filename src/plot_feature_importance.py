@@ -5,7 +5,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from pylab import *
 import optparse
-matplotlib.use('Agg') 
+matplotlib.use('Agg')
 
 PATH_TO_DATA_POS = '/home/dsvet/mydata/45TFs_new/TRAINING_SET/ft_pos_neg_1pertf_all45_tfs_with_fmf/STAT5A.pos.FT.ftf'
 PATH_TO_DATA_NEG = '/home/dsvet/mydata/45TFs_new/TRAINING_SET/ft_pos_neg_1pertf_all45_tfs_with_fmf/STAT5A.neg.FT.ftf'
@@ -13,7 +13,7 @@ PATH_TO_DATA_NEG = '/home/dsvet/mydata/45TFs_new/TRAINING_SET/ft_pos_neg_1pertf_
 
 ###----Calculate feature importance----###
 
-def calculate_feature_importance(data_for_training_numpy, list_all_features, class_labels_bin,filename_to_save_fig):
+def calculate_feature_importance(data_for_training_numpy, list_all_features, class_labels_bin,filename_to_save_fig, path_to_save_scores):
     n_trees=151
     ###---Make cross validation and plot curve using all features---###
     y = np.array(class_labels_bin)
@@ -30,6 +30,10 @@ def calculate_feature_importance(data_for_training_numpy, list_all_features, cla
     feature_importance_std = np.std(feature_importance_per_trie, axis=0)
     importance_std_mean = feature_importance_std/np.sqrt(len(feature_importance_std))
 
+    file_to_save = open(path_to_save_scores,'w')
+
+    for i in range(0,len(importances)):
+        file_to_save.write(list_all_features[i] + "\t" + str(importances[i]) + "\n")
     ###---Make cross validation and plot curve using all features---###
 
     ###---Make cross validation and plot curve using all features---###
@@ -57,11 +61,11 @@ if __name__ == '__main__':
     parser.add_option("-p", "--pos_data", action = "store", type = "string", dest = "pos_data_path", help = 'File with feature names')
     parser.add_option("-n", "--neg_data", action = "store", type = "string", dest = "neg_data_path", help = 'file with mutations (SNVs)')
     parser.add_option("-s", "--save_path"   , action = "store", type = "string", dest = "path_to_save_results", help = 'Path to save results')
-    parser.add_option("-o", "--imprtance_scores"   , action = "store", type = "string", dest = "path_to_save_imprtance_scores", help = 'Path to save results')
+    parser.add_option("-o", "--imprtance_scores", action = "store", type = "string", dest = "path_to_save_imprtance_scores", help = 'Path to save results')
     (options, args) = parser.parse_args()
 
     # Check if we have an expression matrix filea FASTA or twobit file is given as input.
-    if ( (options.pos_data_path is None) or (options.neg_data_path is None) or (options.path_to_save_results is None)):
+    if ( (options.pos_data_path is None) or (options.neg_data_path is None) or (options.path_to_save_results is None)) or (options.path_to_save_imprtance_scores is None):
         parser.print_help()
         print >> sys.stderr, '\nERROR: minimum required options not satisfied:\n'
         sys.exit(1)
@@ -69,6 +73,7 @@ if __name__ == '__main__':
     PATH_TO_DATA_POS = options.pos_data_path
     PATH_TO_DATA_NEG = options.neg_data_path
     PATH_TO_SAVE = options.path_to_save_results
+    PATH_TO_SAVE_FI_SCORES = options.path_to_save_imprtance_scores
     ###----Read file with posotives----###
     data_for_training_pos = pd.read_table( PATH_TO_DATA_POS, sep = "\t", header = 0, index_col = 0 )
     data_for_training_neg = pd.read_table( PATH_TO_DATA_NEG, sep = "\t", header = 0, index_col = 0 )
@@ -84,7 +89,7 @@ if __name__ == '__main__':
         data_for_training_pos_neg = data_for_training_pos.append(data_for_training_neg)
         class_labels = np.array(class_labels)
         data_for_training_pos_neg = pd.np.array(data_for_training_pos_neg)
-        calculate_feature_importance(data_for_training_pos_neg, feature_order_pos, class_labels,filename_to_save_fig)
+        calculate_feature_importance(data_for_training_pos_neg, feature_order_pos, class_labels,filename_to_save_fig, PATH_TO_SAVE_FI_SCORES)
 
 
 
