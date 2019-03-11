@@ -68,8 +68,8 @@ of used PWMs (PATH_TO_FEATURE_ORDER).
 PATH_TO_FEATURE_ORDER=./example/feature_order.txt 
 #.fasta file
 PATH_TO_FASTA_FILE=./example/pos.fa
-# path prefix to save results (".tsv" is added automatically).
-PATH_PREFIX_TO_SAVE=./results/pos.FT
+# path to save results.
+PATH_TO_SAVE=./results/pos.FT.tsv
 # python script
 PATH_TO_SCRIPT=./src/make_feature_table.py
 # folder where files with PWMs are
@@ -84,7 +84,8 @@ python3 ${PATH_TO_SCRIPT} \
     -f ${PATH_TO_FASTA_FILE} \
     -M ${PATH_TO_SINGLETONS}/ \
     -m ${PATH_TO_FEATURE_ORDER} \
-    -o ${PATH_PREFIX_TO_SAVE} \
+    -o ${PATH_TO_SAVE} \
+    -O 'tsv' \
     -c ${PATH_TO_CBUST} \
     -t ${NBR_THREADS}
 
@@ -94,8 +95,8 @@ python3 ${PATH_TO_SCRIPT} \
 PATH_TO_FEATURE_ORDER=./example/feature_order.txt
 #.fasta file
 PATH_TO_FASTA_FILE=./example/neg.fa
-# path prefix to save results (".tsv" is added automatically).
-PATH_PREFIX_TO_SAVE=./results/neg.FT
+# path to save results.
+PATH_TO_SAVE=./results/neg.FT.tsv
 # python script
 PATH_TO_SCRIPT=./src/make_feature_table.py
 # folder where files with PWMs are
@@ -110,7 +111,8 @@ python3 ${PATH_TO_SCRIPT} \
     -f ${PATH_TO_FASTA_FILE} \
     -M ${PATH_TO_SINGLETONS}/ \
     -m ${PATH_TO_FEATURE_ORDER} \
-    -o ${PATH_PREFIX_TO_SAVE} \
+    -o ${PATH_TO_SAVE} \
+    -O 'tsv' \
     -c ${PATH_TO_CBUST} \
     -t ${NBR_THREADS}
 ```
